@@ -22,7 +22,6 @@ class Account:
         return f"{self.owner}, Guthaben: {self.__balance}"
 
     def deposit(self, amount):
-
         try:
             if amount < 0:
                 raise ValueError("Keine negativen Werte erlaubt")
@@ -35,8 +34,7 @@ class Account:
             return False
 
 
-    def withdraw(self, amount):
-        
+    def withdraw(self, amount):        
         try:           
             if amount < 0:
                 raise ValueError("Keine negativen Werte erlaubt")
@@ -65,8 +63,7 @@ class Account:
     
         
     
-class StudentAccount(Account):
-    
+class StudentAccount(Account):   
     def withdraw(self, amount):
         try:
             if self.balance - amount <0: #self.balance: ist die !Property! aus der hauptklasse (auf __balance kann hier nicht zugegriffen werden weil private
@@ -116,7 +113,7 @@ print(b.balance)
     
 
 ##################### Demo ############
-
+'''
 a1 = Account("A")
 a2 = Account("B")
 a1.deposit(100)
@@ -142,3 +139,4 @@ except:
 print(s1)
 print(a1)
 
+'''
